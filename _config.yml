@@ -10,7 +10,6 @@ lang: en
 
 plugins:
   - jekyll-seo-tag
-  - jekyll-sitemap
 
 
 color: "#13ccf9"
