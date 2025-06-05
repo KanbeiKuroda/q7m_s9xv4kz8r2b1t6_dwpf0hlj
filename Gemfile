@@ -2,4 +2,4 @@
 
 source "https://rubygems.org"
 gemspec
-gem install jekyll-sitemap
+gem jekyll-sitemap
