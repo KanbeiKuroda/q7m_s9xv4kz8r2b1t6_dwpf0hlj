@@ -2,7 +2,7 @@
 layout: post
 title: Pinocchio's Revenge (1996) Review
 date: 2025-05-20
-image: https://i.ibb.co/VYJ9CPLZ/MV5-BNGY4-MGJl-Zjgt-Nj-Rh-NC00-MDlm-LThi-MDct-Zj-Mx-Ym-I1-ZGU1-Zj-Fj-Xk-Ey-Xk-Fqc-Gde-QXVy-MTQx-Nz-M.webp
+image: https://i.ibb.co/LdQVRBRN/IMG-COM-202506051603539201.webp
 tags:
   - film-reviews
   - kevin-tenney
