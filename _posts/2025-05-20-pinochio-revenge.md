@@ -5,8 +5,7 @@ date: 2025-05-20
 image: https://i.ibb.co/VYJ9CPLZ/MV5-BNGY4-MGJl-Zjgt-Nj-Rh-NC00-MDlm-LThi-MDct-Zj-Mx-Ym-I1-ZGU1-Zj-Fj-Xk-Ey-Xk-Fqc-Gde-QXVy-MTQx-Nz-M.webp
 tags:
   - film-reviews
-  - kevin
-  - tenney
+  - kevin-tenney
   - 90s
   - horror
 ---
