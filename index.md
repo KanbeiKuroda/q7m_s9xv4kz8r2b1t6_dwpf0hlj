@@ -1,7 +1,4 @@
 ---
 layout: home
 ---
-# Welcome!
-
-Hello friend.
-
+##### *Welcome to the dark side of cinema reviews.*
