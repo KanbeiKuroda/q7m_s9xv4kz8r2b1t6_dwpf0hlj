@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: tags
 layout: tags
 permalink: /tags/
 ---
