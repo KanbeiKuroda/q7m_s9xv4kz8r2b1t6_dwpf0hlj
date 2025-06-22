@@ -1,7 +1,7 @@
 ---
-title: Etiquetas
+title: Tags
 layout: tags
-permalink: /etiquetas/
+permalink: /tags/
 ---
 
 
