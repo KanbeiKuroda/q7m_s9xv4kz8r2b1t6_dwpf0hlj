@@ -6,7 +6,7 @@ title: The Stained Screen
 email: wind@example.com
 author: Alexander Delacroix
 
-lang: es
+lang: en
 
 plugins:
   - jekyll-seo-tag
