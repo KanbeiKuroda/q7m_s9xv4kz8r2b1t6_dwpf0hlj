@@ -1,0 +1,27 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main  # or 'master' if that's your default branch
+  schedule:
+    - cron: '0 0 * * 0'  # weekly auto update
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url: 'https://cinefilth.github.io'
+
+      - name: Commit sitemap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add sitemap.xml
+          git commit -m "Add/update sitemap"
+          git push
