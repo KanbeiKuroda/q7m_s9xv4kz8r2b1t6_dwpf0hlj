@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://cinefilth.github.io/</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://web.address.of.your.nifty.website/404.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/about.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/google49dfd80408a1319f.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/gallery.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/custom_head.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/sample.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/disqus_comments.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/tags/</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/footer.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/2025/06/02/gun-woman.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/head.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/2025/05/20/pinochio-revenge.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/navbar.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/2025/05/13/foxfire.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/sharing.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
 <url>
-  <loc>https://cinefilth.github.io/404.html</loc>
-  <lastmod>2025-06-23T21:55:04+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://web.address.of.your.nifty.website/_includes/social.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
 </url>
-
-
+<url>
+<loc>https://web.address.of.your.nifty.website/_includes/up_button.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
+<url>
+<loc>https://web.address.of.your.nifty.website/_layouts/base.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
+<url>
+<loc>https://web.address.of.your.nifty.website/_layouts/gallery.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
+<url>
+<loc>https://web.address.of.your.nifty.website/_layouts/home.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
+<url>
+<loc>https://web.address.of.your.nifty.website/_layouts/page.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
+<url>
+<loc>https://web.address.of.your.nifty.website/_layouts/post.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
+<url>
+<loc>https://web.address.of.your.nifty.website/_layouts/tags.html</loc>
+<lastmod>2025-06-24T01:50:20-06:00</lastmod>
+</url>
 </urlset>
