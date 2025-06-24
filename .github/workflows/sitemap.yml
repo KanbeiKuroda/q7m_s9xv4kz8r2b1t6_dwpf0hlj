@@ -16,7 +16,7 @@ jobs:
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url: 'https://cinefilth.github.io'
+          base-url-path: 'https://cinefilth.github.io'
 
       - name: Commit sitemap
         run: |
