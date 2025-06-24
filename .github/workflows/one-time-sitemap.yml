@@ -1,0 +1,43 @@
+name: One-Time Sitemap Generator
+
+on:
+  workflow_dispatch:  # Manually triggered only
+
+permissions:
+  contents: write  # Needed to commit to the repo
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+
+      - name: Install Bundler
+        run: gem install bundler
+
+      - name: Install dependencies
+        run: |
+          bundle config set path 'vendor/bundle'
+          bundle install
+
+      - name: Build the site
+        run: bundle exec jekyll build
+
+      - name: Copy sitemap.xml to root
+        run: cp _site/sitemap.xml .
+
+      - name: Commit and push sitemap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add sitemap.xml
+          git commit -m "One-time push of sitemap.xml"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
