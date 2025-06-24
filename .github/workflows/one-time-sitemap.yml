@@ -39,6 +39,6 @@ jobs:
          git add sitemap.xml
          git diff --cached --quiet || git commit -m "One-time push of sitemap.xml"
          git push
-         env:
+env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
