@@ -12,6 +12,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+permalink: pretty
+
 color: "#13ccf9"
 # disqus:
 #   shortname: example-com
