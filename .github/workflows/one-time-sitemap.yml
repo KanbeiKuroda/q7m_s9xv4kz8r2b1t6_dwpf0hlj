@@ -64,5 +64,8 @@ jobs:
           git add sitemap.xml
           git commit -m "Update sitemap.xml due to post changes"
           git push
+
+      - name: Notify Google of sitemap update
+        run: curl -s "https://www.google.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
 env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
