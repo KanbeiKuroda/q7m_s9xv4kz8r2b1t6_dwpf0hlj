@@ -1,10 +1,10 @@
 name: One-Time Sitemap Generator
 
 on:
-  workflow_dispatch:  # Manually triggered only
+  workflow_dispatch:
 
 permissions:
-  contents: write  # Needed to commit to the repo
+  contents: write
 
 jobs:
   build_and_push:
@@ -17,17 +17,29 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true  # 💡 This handles bundle install + caching automatically
+          bundler-cache: true
 
-      # ❌ This step becomes unnecessary if you're using bundler-cache:
-      # - name: Install Bundler
-      #   run: gem install bundler
+      - name: Save checksum of previous sitemap.xml (if exists)
+        run: |
+          if [ -f sitemap.xml ]; then
+            sha256sum sitemap.xml > old_sitemap.sha
+          else
+            echo "no_previous_file" > old_sitemap.sha
+          fi
 
-      # ❌ And this too:
-      # - name: Install dependencies
-      #   run: |
-      #     bundle config set path 'vendor/bundle'
-      #     bundle install
+      - name: Check for changes in _posts directory
+        id: check_posts
+        run: |
+          git fetch origin main
+          CHANGED=$(git diff --name-only origin/main HEAD -- '_posts/*')
+          echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed files: $CHANGED"
+
+      - name: Exit if no changes to posts
+        if: steps.check_posts.outputs.changed_files == ''
+        run: |
+          echo "No post changes detected. Skipping sitemap generation."
+          exit 0
 
       - name: Build the site
         run: bundle exec jekyll build
@@ -35,12 +47,22 @@ jobs:
       - name: Copy sitemap.xml to root
         run: cp _site/sitemap.xml .
 
+      - name: Check if sitemap.xml has changed
+        run: |
+          sha256sum sitemap.xml > new_sitemap.sha
+          if cmp -s old_sitemap.sha new_sitemap.sha; then
+            echo "No changes in sitemap.xml – skipping commit."
+            exit 0
+          else
+            echo "Sitemap changed – will commit."
+          fi
+
       - name: Commit and push sitemap
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add sitemap.xml
-          git diff --cached --quiet || git commit -m "One-time push of sitemap.xml"
+          git commit -m "Update sitemap.xml due to post changes"
           git push
 env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
