@@ -16,15 +16,18 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2
+          ruby-version: '3.2'
+          bundler-cache: true  # 💡 This handles bundle install + caching automatically
 
-      - name: Install Bundler
-        run: gem install bundler
+      # ❌ This step becomes unnecessary if you're using bundler-cache:
+      # - name: Install Bundler
+      #   run: gem install bundler
 
-      - name: Install dependencies
-        run: |
-          bundle config set path 'vendor/bundle'
-          bundle install
+      # ❌ And this too:
+      # - name: Install dependencies
+      #   run: |
+      #     bundle config set path 'vendor/bundle'
+      #     bundle install
 
       - name: Build the site
         run: bundle exec jekyll build
@@ -34,11 +37,10 @@ jobs:
 
       - name: Commit and push sitemap
         run: |
-         git config user.name "github-actions"
-         git config user.email "github-actions@github.com"
-         git add sitemap.xml
-         git diff --cached --quiet || git commit -m "One-time push of sitemap.xml"
-         git push
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add sitemap.xml
+          git diff --cached --quiet || git commit -m "One-time push of sitemap.xml"
+          git push
 env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
