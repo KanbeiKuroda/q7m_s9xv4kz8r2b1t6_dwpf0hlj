@@ -32,8 +32,8 @@ jobs:
         run: |
           git fetch origin main
           CHANGED=$(git diff --name-only origin/main HEAD -- '_posts/*')
+          echo "changed_files=$CHANGED"
           echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
-          echo "Changed files: $CHANGED"
 
       - name: Exit if no changes to posts
         if: steps.check_posts.outputs.changed_files == ''
@@ -62,10 +62,22 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add sitemap.xml
-          git commit -m "Update sitemap.xml due to post changes"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to sitemap.xml – skipping commit."
+          else
+            git commit -m "Update sitemap.xml due to post changes"
+            git push
+          fi
 
-      - name: Notify Google of sitemap update
-        run: curl -s "https://www.google.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
+      - name: Ping search engines
+        run: |
+          echo "Pinging Google..."
+          curl -s "https://www.google.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
+
+          echo "Pinging Bing..."
+          curl -s "https://www.bing.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
+
+          echo "Pinging Yandex..."
+          curl -s "https://yandex.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
 env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
