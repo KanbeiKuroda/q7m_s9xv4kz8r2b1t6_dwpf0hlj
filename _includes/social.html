@@ -7,6 +7,15 @@
           </a>
           {% endif %}
 
+          {% if site.rrss.substack %}
+          <a class="p-2" href="{{site.rrss.substack}}" target="_blank" rel="noopener noreferrer">
+            <!-- Substack -->
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+             <path d="M64 64h384v64H64V64zm0 128h384v64H64v-64zm0 128h384v128H64V320z"/>
+            </svg>
+          </a>
+          {% endif %}
+       
           {% if site.rrss.facebook %}
           <a class="p-2" href="{{site.rrss.facebook}}">
             <!-- Facebook -->
