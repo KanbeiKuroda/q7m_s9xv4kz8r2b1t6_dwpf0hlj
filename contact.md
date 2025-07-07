@@ -1,10 +1,28 @@
----
-layout: base
-title: Contact Email
-permalink: /email-contact/
-robots: noindex
----
-
-#####You can get in touch with me here
-
-**📧 Email:** `alexander.dlx@protonmail.com`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact</title>
+  <meta name="robots" content="noindex">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900">
+  <div class="flex items-center justify-center h-[80vh]">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold dark:text-white mb-4">Contact Me</h1>
+      <p class="text-gray-600 dark:text-gray-100 text-lg mb-4">Here's my email address:</p>
+      <p class="text-gray-800 dark:text-gray-200 text-xl font-mono mb-6">
+        alexander.dlx@protonmail.com
+      </p>
+      <div class="mx-auto mt-6 w-20">
+        <!-- Email icon SVG -->
+        <svg class="fill-current dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M502.3 190.8L327.4 338.2c-20.2 16.6-48.6 16.6-68.8 0L9.7 190.8C3.9 185.9 0 178.6 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 7.9-3.9 15.2-9.7 20.1zM48 160l176 144 176-144H48zm464 32v223.7c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192l216 177.3c20.2 16.6 48.6 16.6 68.8 0L512 192z"/>
+        </svg>
+      </div>
+      <a href="/" class="mt-4 underline block text-blue-600 dark:text-blue-400">Go back</a>
+    </div>
+  </div>
+</body>
+</html>
