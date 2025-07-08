@@ -7,8 +7,11 @@ module.exports = {
     '_includes/**/*.html'
   ],
   theme: {
-    extend: {},
-  },
+    extend: {
+      colors: {
+        slate: {
+          800: '#0f0f0f',
+        },
   plugins: [
     require('@tailwindcss/typography')
   ],
