@@ -19,12 +19,14 @@ This movie is the result of a monstrous collaborative effort from animators arou
 
 <img src="https://cdn.imgchest.com/files/4jdcv632pb4.webp">
 
-The voice acting also deserves praise, everyone brings the right energy. And hey, the fact that they landed big names like __William Shatner__ and __Morena Baccarin__ on such a tight budget is kinda amazing. It says a lot about them and adds heart to the whole thing.
+The voice acting also deserves praise, everyone brings the right energy. And hey, the fact that they landed big names like William Shatner and Morena Baccarin on such a tight budget is kinda amazing. It says a lot about them and adds heart to the whole thing.
 As for the soundtrack and audio, it does the job. The music supports the tension very well, and the sound mixing holds up.
 
-When it comes to horror, the movie doesn’t fully deliver what they promised. The blood and violence are there, but it leans more into _Itchy & Scratchy_-levels of cartoon brutality than something genuinely disturbing like _Genocyber_. There are a few tense moments, but if you were expecting something traumatizing, you might walk away feeling like it played things too safe.
+When it comes to horror, the movie doesn’t fully deliver what they promised. The blood and violence are there, but it leans more into _Itchy & Scratchy's_ levels of cartoon brutality than something genuinely disturbing like _Genocyber_. There are a few tense moments, but if you were expecting something traumatizing, you might walk away feeling like it played things too safe.
 
 <img src="https://cdn.imgchest.com/files/yq9c3v2bqe4.webp">
 
 Overall, _To Your Last Death_ is a solid, interesting animated film from start to finish. I loved it when I first caught it around release, and it held up on rewatch.
 I’d give it a 9/10, although it had the potential to be a perfect 10 if the horror and violence had been more disturbing. Still, the unique style, engaging premise, and the sheer passion behind the voice acting and animation make it well worth watching.
+⭐⭐⭐⭐⭐⭐⭐⭐⭐☆
+
