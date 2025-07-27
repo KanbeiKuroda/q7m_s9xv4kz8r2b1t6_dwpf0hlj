@@ -15,7 +15,7 @@ It all starts with Miriam DeKalb, the black sheep of a deeply dysfunctional fami
 
 <img src="https://cdn.imgchest.com/files/7lxcpxrjb27.webp">
 
-This movie is the result of a monstrous collaborative effort from animators around the world, who worked online to bring it to life. The hand-drawn 2D animation has that Adobe Flash/Newgrounds vibe, mixed with the fluidity of early _Huevocartoon_. You can tell the team worked within their limits but still squeezed out as much style and detail as possible—even though most of the action takes place in confined rooms and tight hallways. For an indie production, that effort shines through, and it’s part of the film’s charm. The character designs are simple but expressive and oddly pleasant to watch, kinda like __Robert Kirkman’s__ early _The Walking Dead_ comics. They clearly poured their energy into nailing the movements and reactions, even with the tools they had.
+This movie is the result of a monstrous collaborative effort from animators around the world, who worked online to bring it to life. The hand-drawn 2D animation has that Adobe Flash/Newgrounds vibe, mixed with the fluidity of early _Huevocartoon_. You can tell the team worked within their limits but still squeezed out as much style and detail as possible—even though most of the action takes place in confined rooms and tight hallways. For an indie production, that effort shines through, and it’s part of the film’s charm. The character designs are simple but expressive and oddly pleasant to watch, kinda like Robert Kirkman’s early _The Walking Dead_ comics. They clearly poured their energy into nailing the movements and reactions, even with the tools they had.
 
 <img src="https://cdn.imgchest.com/files/4jdcv632pb4.webp">
 
