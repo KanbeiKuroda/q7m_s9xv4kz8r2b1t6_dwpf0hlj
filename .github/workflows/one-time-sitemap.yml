@@ -25,9 +25,10 @@ jobs:
       - name: Detect new posts since last commit
         id: check_posts
         run: |
-          NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/")
-          echo "Detected changes: $NEW_POSTS"
-          echo "changed_files=$NEW_POSTS" >> $GITHUB_OUTPUT
+         NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/" || true)
+         echo "Detected changes: $NEW_POSTS"
+         echo "changed_files=$NEW_POSTS" >> $GITHUB_OUTPUT
+
 
       - name: Exit if no new posts
         if: steps.check_posts.outputs.changed_files == ''
