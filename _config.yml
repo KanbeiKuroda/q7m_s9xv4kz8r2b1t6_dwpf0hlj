@@ -1,5 +1,5 @@
-domain: cinefilth.github.io
-url: https://cinefilth.github.io
+domain: cinefilth.pages.dev
+url: https://cinefilth.pages.dev
 baseurl: ""
 
 title: Cinefilth
@@ -19,5 +19,5 @@ color: "#13ccf9"
 #   shortname: example-com
 #
 rrss:
-  email: "https://cinefilth.github.io/email.html"
+  email: "https://cinefilth.pages.dev/email.html"
   substack: "https://alexanderdelacroix.substack.com/"
