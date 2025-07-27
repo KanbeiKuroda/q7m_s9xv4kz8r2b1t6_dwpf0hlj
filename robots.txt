@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cinefilth.github.io/sitemap.xml
+Sitemap: https://cinefilth.pages.dev/sitemap.xml
