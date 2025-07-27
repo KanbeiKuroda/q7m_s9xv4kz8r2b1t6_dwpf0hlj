@@ -1,4 +1,4 @@
-name: One-Time Sitemap Generator
+name: Manual Sitemap Generator
 
 on:
   workflow_dispatch:
@@ -7,11 +7,14 @@ permissions:
   contents: write
 
 jobs:
-  build_and_push:
+  build_and_update_sitemap:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -19,65 +22,41 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Save checksum of previous sitemap.xml (if exists)
-        run: |
-          if [ -f sitemap.xml ]; then
-            sha256sum sitemap.xml > old_sitemap.sha
-          else
-            echo "no_previous_file" > old_sitemap.sha
-          fi
-
-      - name: Check for changes in _posts directory
+      - name: Detect new posts since last commit
         id: check_posts
         run: |
-          git fetch origin main
-          CHANGED=$(git diff --name-only origin/main HEAD -- '_posts/*')
-          echo "changed_files=$CHANGED"
-          echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+          NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/")
+          echo "Detected changes: $NEW_POSTS"
+          echo "changed_files=$NEW_POSTS" >> $GITHUB_OUTPUT
 
-      - name: Exit if no changes to posts
+      - name: Exit if no new posts
         if: steps.check_posts.outputs.changed_files == ''
         run: |
-          echo "No post changes detected. Skipping sitemap generation."
+          echo "No new posts detected. Exiting."
           exit 0
 
-      - name: Build the site
+      - name: Build the Jekyll site
         run: bundle exec jekyll build
 
-      - name: Copy sitemap.xml to root
-        run: cp _site/sitemap.xml .
+      - name: Copy generated sitemap to repo root
+        run: cp _site/sitemap.xml sitemap.xml
 
-      - name: Check if sitemap.xml has changed
-        run: |
-          sha256sum sitemap.xml > new_sitemap.sha
-          if cmp -s old_sitemap.sha new_sitemap.sha; then
-            echo "No changes in sitemap.xml – skipping commit."
-            exit 0
-          else
-            echo "Sitemap changed – will commit."
-          fi
-
-      - name: Commit and push sitemap
+      - name: Check if sitemap has changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add sitemap.xml
-          if git diff --cached --quiet; then
-            echo "No changes to sitemap.xml – skipping commit."
+
+          if git diff --quiet sitemap.xml; then
+            echo "No sitemap changes detected."
+            exit 0
           else
-            git commit -m "Update sitemap.xml due to post changes"
-            git push
+            echo "Sitemap has changed – committing."
           fi
 
-      - name: Ping search engines
+      - name: Commit and push new sitemap.xml
         run: |
-          echo "Pinging Google..."
-          curl -s "https://www.google.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
-
-          echo "Pinging Bing..."
-          curl -s "https://www.bing.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
-
-          echo "Pinging Yandex..."
-          curl -s "https://yandex.com/ping?sitemap=https://cinefilth.github.io/sitemap.xml"
-env:
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap.xml due to new post(s)"
+          git push
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
