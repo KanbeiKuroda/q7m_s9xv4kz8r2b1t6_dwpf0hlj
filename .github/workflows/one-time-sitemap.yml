@@ -27,20 +27,22 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Overwrite sitemap.xml in repo root
+      - name: Overwrite and commit sitemap.xml if changed
         run: |
-          cp _site/sitemap.xml sitemap.xml
+          # Copy the generated sitemap to repo root
+          cp ./_site/sitemap.xml ./sitemap.xml
+          
+          # Configure git
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-
-      - name: Check if sitemap.xml changed and commit
-        run: |
-          if ! git diff --quiet sitemap.xml; then
-            git add sitemap.xml
-            git commit -m "Update sitemap.xml with new URLs"
+          
+          # Check for changes and commit if needed
+          git add sitemap.xml
+          if ! git diff --cached --quiet; then
+            git commit -m "Update sitemap.xml with new URLs [skip ci]"
             git push
           else
-            echo "No sitemap changes detected. Skipping commit."
+            echo "No changes to sitemap.xml detected"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
