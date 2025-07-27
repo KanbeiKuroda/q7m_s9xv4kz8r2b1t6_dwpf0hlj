@@ -22,42 +22,25 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Detect new posts since last commit
-        id: check_posts
-        run: |
-         NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/" || true)
-         echo "Detected changes: $NEW_POSTS"
-         echo "changed_files=$NEW_POSTS" >> $GITHUB_OUTPUT
-
-
-      - name: Exit if no new posts
-        if: steps.check_posts.outputs.changed_files == ''
-        run: |
-          echo "No new posts detected. Exiting."
-          exit 0
-
       - name: Build the Jekyll site
         run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
 
-      - name: Copy generated sitemap to repo root
-        run: cp _site/sitemap.xml sitemap.xml
-
-      - name: Check if sitemap has changed
+      - name: Overwrite sitemap.xml in repo root
         run: |
+          cp _site/sitemap.xml sitemap.xml
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          if git diff --quiet sitemap.xml; then
-            echo "No sitemap changes detected."
-            exit 0
-          else
-            echo "Sitemap has changed – committing."
-          fi
-
-      - name: Commit and push new sitemap.xml
+      - name: Check if sitemap.xml changed and commit
         run: |
-          git add sitemap.xml
-          git commit -m "Auto-update sitemap.xml due to new post(s)"
-          git push
+          if ! git diff --quiet sitemap.xml; then
+            git add sitemap.xml
+            git commit -m "Update sitemap.xml with new URLs"
+            git push
+          else
+            echo "No sitemap changes detected. Skipping commit."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
