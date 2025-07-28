@@ -5,11 +5,6 @@ layout: base
   <div class="flex flex-col md:flex-row items-center">
     <div class="md:basis-4/6">
       <h1 class="text-2xl md:text-4xl xl:text-5xl text-center py-6 md:p-6">{{page.title}}</h1>
-      <div class="flex flex-wrap justify-center gap-4">
-        {% for tag in page.tags %}
-        <a class="text-sm text-slate-700 underline md:no-underline hover:underline dark:text-slate-100/80" href="{{ '/tags#' | append: tag | relative_url }}">#{{tag}}</a>
-        {% endfor %}
-      </div>
       <div class="flex justify-center items-center gap-2 pt-4">
         <span class="text-slate-700 dark:text-slate-100/80">{{page.author | default: site.author }}</span>
         <p class="text-slate-700 dark:text-slate-100/80">{{ page.date | date: "%d-%m-%Y" }}</p>
@@ -21,13 +16,20 @@ layout: base
 
 <div class="mx-auto py-4 md:py-12 fadeIn">
   <div class="flex justify-center pb-4 md:pb-8">
-<article class="prose md:prose-xl max-w-none prose-p:font-extralight prose-headings:font-light prose-slate dark:prose-invert prose-img:mx-auto prose-img:w-full">
+    <article class="prose md:prose-xl max-w-none prose-p:font-extralight prose-headings:font-light prose-slate dark:prose-invert prose-img:mx-auto prose-img:w-full">
       {{ content }}
     </article>
   </div>
 
   <div class="mx-auto my-10">
     {% include sharing.html %}
+  </div>
+
+  <!-- Moved tags section below sharing buttons -->
+  <div class="flex flex-wrap justify-center gap-4 pb-6">
+    {% for tag in page.tags %}
+    <a class="text-sm text-slate-700 underline md:no-underline hover:underline dark:text-slate-100/80" href="{{ '/tags#' | append: tag | relative_url }}">#{{tag}}</a>
+    {% endfor %}
   </div>
 
   <div class="post-navigation py-8 flex flex-col md:flex-row-reverse justify-center ">
@@ -56,10 +58,4 @@ layout: base
     </a>
     {% endif %}
   </div>
-
-  {%- if site.disqus.shortname -%}
-  <div class="mx-auto max-w-prose py-8">
-    {%- include disqus_comments.html -%}
-  </div>
-  {%- endif -%}
 </div>
