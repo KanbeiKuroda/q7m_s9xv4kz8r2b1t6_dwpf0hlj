@@ -19,7 +19,7 @@ layout: base
     </div>
 
     <div class="pt-2">
-      {% for tag in post.tags limit:3 %}
+      {% for tag in post.tags limit:2 %}
       <span class="text-xs text-slate-700 dark:text-slate-100/80 align-middle">#{{tag}}</span>
       {% endfor %}
     </div>
