@@ -4,10 +4,12 @@ layout: base
 <div class="flex justify-center md:pt-8 w-full md:w-4/5 mx-auto fadeIn">
   <div class="flex flex-col md:flex-row items-center">
     <div class="md:basis-4/6">
-      <h1 class="text-2xl md:text-4xl xl:text-5xl text-center py-6 md:p-6">{{page.title}}</h1>
-      <div class="flex justify-center items-center gap-2 pt-4">
-        <span class="text-slate-700 dark:text-slate-100/80">{{page.author | default: site.author }}</span>
-        <p class="text-slate-700 dark:text-slate-100/80">{{ page.date | date: "%d-%m-%Y" }}</p>
+      <!-- Reduced title padding from py-6 to py-4 -->
+      <h1 class="text-2xl md:text-4xl xl:text-5xl text-center py-4 md:p-4">{{page.title}}</h1>
+      <div class="flex justify-center items-center gap-2 pt-2">
+        <!-- Made author and date text smaller with text-sm -->
+        <span class="text-sm text-slate-700 dark:text-slate-100/80">{{page.author | default: site.author }}</span>
+        <p class="text-sm text-slate-700 dark:text-slate-100/80">{{ page.date | date: "%d-%m-%Y" }}</p>
       </div>
     </div>
     <img src="{{ page.image | relative_url }}" alt="" class="basis-2/6  w-11/12 md:w-5/12 p-2 md:px-0">
@@ -25,7 +27,6 @@ layout: base
     {% include sharing.html %}
   </div>
 
-  <!-- Moved tags section below sharing buttons -->
   <div class="flex flex-wrap justify-center gap-4 pb-6">
     {% for tag in page.tags %}
     <a class="text-sm text-slate-700 underline md:no-underline hover:underline dark:text-slate-100/80" href="{{ '/tags#' | append: tag | relative_url }}">#{{tag}}</a>
