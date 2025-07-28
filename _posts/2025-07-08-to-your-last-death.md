@@ -8,6 +8,17 @@ tags:
   - animated
   - horror
   - 2010s
+  - dani-lennon
+  - morena-baccarin
+  - ray-wise
+  - damien-hass
+  - bill-moseley
+  - benjamin-siemon
+  - florence-hartigan
+  - william-shatner
+  - mark-whitten
+  - bill-millsap
+  - tom-lomell
 ---
 A vengeful billionaire forces his estranged sons to participate in a deadly game of survival in __Jason Axinn’s__ directorial debut, an animated adult film that feels like it came straight out of Adult Swim.
 
