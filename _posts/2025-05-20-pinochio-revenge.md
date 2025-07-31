@@ -4,9 +4,8 @@ title: Pinocchio's Revenge (1996) Review
 date: 2025-05-20
 image: https://i.ibb.co/LdQVRBRN/IMG-COM-202506051603539201.webp
 tags:
-  - film-reviews
   - kevin-tenney
-  - 90s
+  - 1990s
   - horror
 ---
 *Pinocchio’s Revenge*, directed by **Kevin Tenney**, is a 1996 horror film that takes a dark twist on the classic fairy tale character. Blending courtroom drama with everyday life, the story follows a defense attorney who brings home an eerie wooden puppet linked to a death row case—only for strange events to begin unfolding around her family. While the premise starts off like another “killer doll” movie in the vein of *Child’s Play*, the film makes an effort to maintain ambiguity about the nature of the events, flirting with the idea that the puppet may truly be possessed or not, which adds a layer of psychological tension.
