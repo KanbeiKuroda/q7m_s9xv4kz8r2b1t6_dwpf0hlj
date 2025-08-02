@@ -30,16 +30,17 @@ layout: base
     {% include sharing.html %}
   </div>
 
-<div class="flex flex-wrap justify-center gap-2 pb-6">
-  {% for tag in page.tags %}
-  <a 
-    href="{{ '/tags#' | append: tag | relative_url }}" 
-    class="px-3 py-1 text-sm rounded-full bg-gray-700 hover:bg-gray-600 dark:bg-white dark:hover:bg-gray-100 transition text-black"
-  >
-    #{{tag}}
-  </a>
-  {% endfor %}
-</div>
+  <div class="flex flex-wrap justify-center gap-2 pb-6">
+    {% for tag in page.tags %}
+    <a 
+      href="{{ '/tags#' | append: tag | relative_url }}" 
+      class="tag px-3 py-1 text-sm rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition text-black"
+    >
+      #{{tag}}
+    </a>
+    {% endfor %}
+  </div>
+
 
   <div class="post-navigation py-8 flex flex-row justify-between items-center max-w-2xl mx-auto">
     {% if page.previous %}
