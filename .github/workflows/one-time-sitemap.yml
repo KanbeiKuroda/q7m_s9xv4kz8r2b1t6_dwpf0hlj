@@ -1,0 +1,48 @@
+name: Manual Sitemap Generator
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build_and_update_sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build the Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Overwrite and commit sitemap.xml if changed
+        run: |
+          # Copy the generated sitemap to repo root
+          cp ./_site/sitemap.xml ./sitemap.xml
+          
+          # Configure git
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          
+          # Check for changes and commit if needed
+          git add sitemap.xml
+          if ! git diff --cached --quiet; then
+            git commit -m "Update sitemap.xml with new URLs [skip ci]"
+            git push
+          else
+            echo "No changes to sitemap.xml detected"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

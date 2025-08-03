@@ -1,0 +1,42 @@
+---
+layout: base
+---
+<div class="flex justify-center py-8">
+  <article class="text-center prose prose-p:font-extralight prose-slate dark:prose-invert primary-underline">
+    {{ content }}
+  </article>
+</div>
+
+<div class="w-full px-4 md:w-4/5 mx-auto mb-10">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
+    <div class="mb-6 hover:scale-[1.02] transition-transform duration-300 origin-center">
+      <a href="{{ post.url | relative_url }}" class="block">
+        <img src="{{ post.image | relative_url }}" alt="" class="w-full h-auto shadow-md">
+        <h2 class="text-lg md:text-xl lg:text-2xl pt-5 text-ellipsis overflow-hidden hover:underline hover:decoration-2 hover:underline-offset-4">{{ post.title }}</h2>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+  }
+  
+  .hover\:scale-\[1\.02\] {
+    transform: scale(1);
+  }
+  .hover\:scale-\[1\.02\]:hover {
+    transform: scale(1.02);
+    z-index: 10;
+  }
+</style>

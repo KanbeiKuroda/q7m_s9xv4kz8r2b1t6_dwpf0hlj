@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.92); /* Slightly transparent */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 10; /* Above the DVD logo */
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        .email {
+            font-family: monospace;
+            font-size: 1.25rem;
+            color: #1a73e8;
+            margin: 1.5rem 0;
+            word-break: break-all;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1a73e8;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .back-link:hover {
+            border-bottom-color: #1a73e8;
+        }
+        #dvd-logo {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            z-index: 1; /* Behind the container */
+            filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2)); /* Soft shadow */
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            .email {
+                font-size: 1.1rem;
+            }
+            #dvd-logo {
+                width: 80px; /* Smaller on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- DVD Logo (SVG from Wikimedia) -->
+    <img id="dvd-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/DVD_logo.svg" alt="DVD Logo">
+
+    <!-- Your Contact Card -->
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>Here's my email address:</p>
+        <p class="email">alexander.dlx@protonmail.com</p>
+        <a href="/" class="back-link">Go back</a>
+    </div>
+
+    <!-- Bouncing Animation Script -->
+    <script>
+        const logo = document.getElementById('dvd-logo');
+        let x = Math.random() * (window.innerWidth - logo.offsetWidth);
+        let y = Math.random() * (window.innerHeight - logo.offsetHeight);
+        let dx = 1.5, dy = 1.5; // Speed (slower for smoother movement)
+        let hue = 0; // For color rotation (optional)
+
+        function updateLogoPosition() {
+            const maxX = window.innerWidth - logo.offsetWidth;
+            const maxY = window.innerHeight - logo.offsetHeight;
+
+            x += dx;
+            y += dy;
+
+            // Bounce off edges
+            if (x <= 0 || x >= maxX) {
+                dx = -dx;
+                rotateColor();
+            }
+            if (y <= 0 || y >= maxY) {
+                dy = -dy;
+                rotateColor();
+            }
+
+            logo.style.left = x + 'px';
+            logo.style.top = y + 'px';
+
+            requestAnimationFrame(updateLogoPosition);
+        }
+
+        // Optional: Add a subtle hue rotation effect on bounce
+        function rotateColor() {
+            hue = (hue + 30) % 360;
+            logo.style.filter = `drop-shadow(0 0 4px rgba(0, 0, 0, 0.2))`;
+        }
+
+        // Start animation
+        updateLogoPosition();
+    </script>
+</body>
+</html>
