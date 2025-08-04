@@ -1,6 +1,6 @@
 /*
 
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; img-src 'self' https://cdn.jsdelivr.net https://upload.wikimedia.org data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://upload.wikimedia.org; form-action 'self'; require-trusted-types-for 'script'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; img-src 'self' https://cdn.jsdelivr.net https://upload.wikimedia.org/wikipedia/commons/9/9b/DVD_logo.svg data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; form-action 'self'; require-trusted-types-for 'script'
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -10,5 +10,4 @@
   Cross-Origin-Resource-Policy: same-origin
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-
   Link: </sitemap.xml>; rel="sitemap"
