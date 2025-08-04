@@ -15,9 +15,10 @@ plugins:
 permalink: pretty
 
 color: "#13ccf9"
-# disqus:
-#   shortname: example-com
-#
+
+include:
+  - _headers
+
 rrss:
   email: "https://cinefilth.pages.dev/email.html"
   substack: "https://alexanderdelacroix.substack.com/"
