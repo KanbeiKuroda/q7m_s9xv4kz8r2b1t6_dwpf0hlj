@@ -4,22 +4,38 @@ layout: base
 <style>
   @font-face {
     font-family: 'Open Sans';
-    src: url('/assets/Open_Sans/static/OpenSans-SemiBold.ttf') format('truetype');
-    font-weight: 600;
+    src: url('/assets/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 300 800;
     font-style: normal;
   }
-  .prose {
+
+  .prose, .prose p, .prose span, .prose li {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    font-weight: 700;
+  }
+
+  .prose img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 </style>
 
 <div class="flex justify-center md:pt-8 w-full md:w-4/5 mx-auto fadeIn">
   <div class="flex flex-col md:flex-row items-center">
     <div class="md:basis-4/6">
-      <h1 class="text-2xl md:text-4xl xl:text-5xl text-center py-4 md:p-4">{{page.title}}</h1>
+      <h1 class="text-2xl md:text-4xl xl:text-5xl text-center py-4 md:p-4">{{ page.title }}</h1>
       <div class="flex justify-center items-center gap-2 pt-2 text-sm text-slate-700 dark:text-slate-100/80">
-        <span>Written by <span class="font-medium">{{page.author | default: site.author }}</span></span>
+        <span>Written by <span>{{ page.author | default: site.author }}</span></span>
         <span>•</span>
         <span>{{ page.date | date: "%B %d, %Y" }}</span>
       </div>
@@ -34,7 +50,7 @@ layout: base
 
 <div class="mx-auto py-4 md:py-12 fadeIn">
   <div class="flex justify-center pb-4 md:pb-8">
-    <article class="prose md:prose-xl max-w-none prose-p:font-semibold prose-headings:font-bold prose-slate dark:prose-invert prose-img:mx-auto prose-img:w-full prose-blockquote:border-l-4 prose-blockquote:border-primary">
+    <article class="prose md:prose-xl max-w-none prose-slate dark:prose-invert prose-blockquote:border-l-4 prose-blockquote:border-primary">
       {{ content }}
     </article>
   </div>
@@ -43,17 +59,16 @@ layout: base
     {% include sharing.html %}
   </div>
 
-<div class="flex flex-wrap justify-center gap-2 pb-6">
-  {% for tag in page.tags %}
-  <a 
-    href="{{ '/tags#' | append: tag | relative_url }}" 
-    class="tag px-4 py-1.5 text-xs font-bold rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition text-black"
-  >
-    #{{tag}}
-  </a>
-  {% endfor %}
-</div>
-
+  <div class="flex flex-wrap justify-center gap-2 pb-6">
+    {% for tag in page.tags %}
+    <a 
+      href="{{ '/tags#' | append: tag | relative_url }}" 
+      class="tag px-4 py-1.5 text-xs font-bold rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition text-black"
+    >
+      #{{ tag }}
+    </a>
+    {% endfor %}
+  </div>
 
   <div class="post-navigation py-8 flex flex-row justify-between items-center max-w-2xl mx-auto">
     {% if page.previous %}
@@ -64,7 +79,7 @@ layout: base
         </svg>
         <div class="px-2">
           <span class="text-xs opacity-70">Previous Post</span>
-          <p class="text-md font-bold max-w-sm">{{page.previous.title}}</p>
+          <p class="text-md font-bold max-w-sm">{{ page.previous.title }}</p>
         </div>
       </div>
     </a>
@@ -74,7 +89,7 @@ layout: base
       <div class="flex items-center py-4 md:py-8 justify-end">
         <div class="px-2">
           <span class="text-xs opacity-70">Next Post</span>
-          <p class="text-md font-bold max-w-sm">{{page.next.title}}</p>
+          <p class="text-md font-bold max-w-sm">{{ page.next.title }}</p>
         </div>
         <svg class="w-6 md:w-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
           <path d="M16.1795 3.26875C15.7889 2.87823 15.1558 2.87823 14.7652 3.26875L8.12078 9.91322C6.94952 11.0845 6.94916 12.9833 8.11996 14.155L14.6903 20.7304C15.0808 21.121 15.714 21.121 16.1045 20.7304C16.495 20.3399 16.495 19.7067 16.1045 19.3162L9.53246 12.7442C9.14194 12.3536 9.14194 11.7205 9.53246 11.33L16.1795 4.68297C16.57 4.29244 16.57 3.65928 16.1795 3.26875Z"></path>
