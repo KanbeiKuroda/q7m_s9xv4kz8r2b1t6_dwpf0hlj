@@ -4,14 +4,14 @@ layout: base
 <style>
   @font-face {
     font-family: 'Open Sans';
-    src: url('/assets/Open_Sans/static/OpenSans-SemiBold.ttf') format('truetype');
-    font-weight: 600;
+    src: url('/assets/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 300 800;
     font-style: normal;
   }
 
-  .prose {
+  .prose, .prose p, .prose span, .prose li {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .prose h1,
@@ -22,11 +22,11 @@ layout: base
   .prose h6 {
     font-weight: 700;
   }
-</style>
 
-<div class="flex justify-center py-4 md:py-8">
-  <article class="text-center prose md:prose-lg prose-slate dark:prose-invert">
-    {{ content }}
-  </article>
-</div>
+  .prose img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+</style>
 
