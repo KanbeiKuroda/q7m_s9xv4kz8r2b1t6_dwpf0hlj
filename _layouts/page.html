@@ -4,17 +4,29 @@ layout: base
 <style>
   @font-face {
     font-family: 'Open Sans';
-    src: url('/assets/Open_Sans/static/OpenSans-Medium.ttf') format('truetype');
-    font-weight: 500;
+    src: url('/assets/Open_Sans/static/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
   }
+
   .prose {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    font-weight: 700;
   }
 </style>
 
 <div class="flex justify-center py-4 md:py-8">
-  <article class="text-center prose md:prose-lg prose-p:font-normal prose-headings:font-bold prose-slate dark:prose-invert">
-  {{ content }}
+  <article class="text-center prose md:prose-lg prose-slate dark:prose-invert">
+    {{ content }}
   </article>
 </div>
+
