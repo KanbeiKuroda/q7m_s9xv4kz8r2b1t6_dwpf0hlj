@@ -1,5 +1,5 @@
 ---
-title: privacy policy
+title: Privacy Policy
 layout: page
 ---
 ## Privacy Policy
