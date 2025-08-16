@@ -5,6 +5,7 @@ layout: page
 ## Privacy Policy
 
 **Effective Date:** August 15, 2025
+
 *This version includes updates clarifying our use of third-party and affiliate links.*
 
 
