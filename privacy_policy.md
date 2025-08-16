@@ -4,8 +4,7 @@ layout: page
 ---
 ## Privacy Policy
 
-**Effective Date:** August 15, 2025
-
+**Effective Date:** August 15, 2025  
 *This version includes updates clarifying our use of third-party and affiliate links.*
 
 
@@ -16,6 +15,7 @@ We care deeply about your privacy and believe the internet should be safe, funct
 - [Third-party services](#third-party-services)
 - [Contact/Info](#contact-us)
 
+---
 
 ### Our practices
 
@@ -35,11 +35,13 @@ The only cookies used on this site are to remember your theme preference (light 
 **Security**  
 We run the latest security protocols to ensure your connection to our site is safe and private.
 
+---
+
 ### Third-party services
 
 Our site uses third-party services to deliver content, improve performance, and provide additional functionality. We do not control these services and do not have access to any personal information they may process.
 
-**Hosting & Server Providers**  
+**Hosting & server providers**  
 Our site is hosted and delivered by Cloudflare (Cloudflare, Inc.), which processes non-identifiable technical information, such as IP address, browser type, and approximate location, for performance, routing, and security purposes. You can learn more in [Cloudflare’s Privacy Policy](https://www.cloudflare.com/privacypolicy/).
 
 **Content Delivery Network (CDN)**  
@@ -60,5 +62,3 @@ If we make changes to this Privacy Policy, we will update the "Effective Date" a
 #### **Contact Us**
 
 If you have any questions or concerns regarding your privacy, please reach us through our [Contact Page](https://cinefilth.pages.dev/email.html).
-
----
