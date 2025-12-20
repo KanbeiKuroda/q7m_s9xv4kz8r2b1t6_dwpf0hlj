@@ -28,7 +28,7 @@ layout: base
         
         {% for i in (0..tags_to_show) limit: max_tags %}
           {% if post.tags[i] %}
-            <span class="inline-block px-3 py-1 text-xs font-medium bg-white text-gray-900 border border-gray-200 rounded-full shadow-sm">
+            <span class="inline-block px-3 py-1 text-xs font-medium bg-gray-900 dark:bg-white text-white dark:text-gray-900 border border-gray-800 dark:border-gray-200 rounded-full shadow-sm">
               {{ post.tags[i] }}
             </span>
           {% endif %}
