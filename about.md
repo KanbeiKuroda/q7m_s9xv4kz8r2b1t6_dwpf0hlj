@@ -10,7 +10,3 @@ This space is dedicated to talking about underground cinema genres that don't al
 This blog is my way of sharing my passion for movies and maybe helping others discover something unexpected along the way.
 
 Thanks for stopping by. Let’s explore the dark, weird, and unexpected corners of cinema together. 🙂
-
-
-
-
